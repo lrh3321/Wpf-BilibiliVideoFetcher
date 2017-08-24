@@ -57,6 +57,7 @@
     <Compile Include="Process\FetchingCoreTests.cs" />
     <Compile Include="TestAria2Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestURLHelper.cs" />
     <Compile Include="TestXmlDanmu.cs" />
     <Compile Include="TestTaskBuilder.cs" />
   </ItemGroup>

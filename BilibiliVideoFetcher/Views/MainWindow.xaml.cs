@@ -1,5 +1,6 @@
 ﻿using BilibiliVideoFetcher.Classes;
 using BilibiliVideoFetcher.Data;
+using BilibiliVideoFetcher.Helper;
 using BilibiliVideoFetcher.Process;
 using System;
 using System.Threading.Tasks;
@@ -75,8 +76,24 @@ namespace BilibiliVideoFetcher
             {
                 Clipboard.SetText(GetSelectedTask(dataGrid).DownloadUrl[0]);
             }
-
         }
+
+
+        private void MenuItemDownloadByThunder_Click(object sender, RoutedEventArgs e)
+        {
+            Log.GetLogger().Info("MainWindow->MenuItemDownloadByThunder_Click", "Clicked MenuItemDownloadByThunder");
+            if (dataGrid.SelectedItems.Count == 0) return;
+            var task = GetSelectedTask(dataGrid);
+            if (task.DownloadUrl == null || task.DownloadUrl.Count == 0)
+            {
+                NotificationData.AddNotifiction(NotificationLevel.Warning, "下载地址尚未获取到, 请等待或删除本任务.");
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(UrlHelper.ConvertToThunder(task.DownloadUrl[0]));
+            }
+        }
+
         private VideoTask GetSelectedTask(DataGrid dg)
         {
             Log.GetLogger().Info("MainWindow->GetSelectedTask", "Called GetSelectedTask.");

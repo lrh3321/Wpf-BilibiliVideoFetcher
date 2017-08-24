@@ -10,7 +10,7 @@ namespace UnitTestFetcher
     {
         private const string NATIVE_API = "http://interface.bilibili.com/playurl?";
         [TestMethod]
-        public void TestMethod1()
+        public void TestBilibiliNativeAPI()
         {
             BilibiliVideoFetcher.Classes.BilibiliVideoInfo info;
             Console.WriteLine(info = TaskBuilder.GetVideoInfoFromNativeApi(11292577));

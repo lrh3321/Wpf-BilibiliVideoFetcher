@@ -24,6 +24,7 @@ namespace UnitTestFetcher
         /// 测试获取任务状态的方法
         /// </summary>
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestTellActive()
         {
             Console.WriteLine("TellActive");
@@ -31,6 +32,7 @@ namespace UnitTestFetcher
         }
 
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestTellStopped()
         {
 
@@ -39,6 +41,7 @@ namespace UnitTestFetcher
         }
 
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestTellWaiting()
         {
             Console.WriteLine("TellWaiting");
@@ -49,6 +52,7 @@ namespace UnitTestFetcher
         /// 测试异步获取任务状态的方法
         /// </summary>
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestTellDownlaodsAsync()
         {
 
@@ -79,6 +83,7 @@ namespace UnitTestFetcher
         }
 
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestAddTask()
         {
             Aria2Helper.AddUri("http://www.baidu.com");
@@ -88,6 +93,7 @@ namespace UnitTestFetcher
         /// 保存百度主页，并
         /// </summary>
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestAddTaskPlus()
         {
             string gid = Aria2Helper.AddUri("http://www.baidu.com",
@@ -105,6 +111,7 @@ namespace UnitTestFetcher
         }
 
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestList()
         {
             Console.WriteLine(string.Join("\r\n", (object[])Aria2Helper.ListMethods()));
@@ -112,6 +119,7 @@ namespace UnitTestFetcher
         }
 
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TestListAsync()
         {
             var methods = Aria2Helper.ListMethodsAsync();
@@ -125,6 +133,7 @@ namespace UnitTestFetcher
         /// 模拟测试一个下载流程
         /// </summary>
         [TestMethod]
+        [TestCategory("Aria2")]
         public void TsetTaskControl()
         {
             // 随手找的手游安装包，体积够大，防止在测试过程中被下载好。
